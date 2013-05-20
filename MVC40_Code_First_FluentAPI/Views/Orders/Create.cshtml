@@ -1,0 +1,64 @@
+﻿@model MVC40_Code_First_FluentAPI.Models.Order
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Order</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OrderedItem)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.OrderedItem)
+            @Html.ValidationMessageFor(model => model.OrderedItem)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OrderedQuantity)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.OrderedQuantity)
+            @Html.ValidationMessageFor(model => model.OrderedQuantity)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UnitPrice)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UnitPrice)
+            @Html.ValidationMessageFor(model => model.UnitPrice)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TotalPrice)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TotalPrice)
+            @Html.ValidationMessageFor(model => model.TotalPrice)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CustomerId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CustomerId)
+            @Html.ValidationMessageFor(model => model.CustomerId)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
